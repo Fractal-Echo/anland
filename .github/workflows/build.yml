@@ -43,7 +43,7 @@ jobs:
 
       - name: Build Android App Client
         run: |
-          cd consumers/anland/android_consumer
+          cd consumers/anland_v2/android_consumer
           chmod +x gradlew
           ./gradlew assembleDebug
           # Copia o apk gerado para o diretorio raiz para facilitar o upload
