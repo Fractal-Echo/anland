@@ -123,7 +123,7 @@ static int receive_dmabufs(display_ctx *ctx)
         return 0;
 
     struct pollfd pfd = { .fd = ctx->data_fd, .events = POLLIN | POLLHUP | POLLERR };
-    if (poll(&pfd, 1, HANDSHAKE_TIMEOUT_MS) <= 0)
+    if (poll(&pfd, 1, 3000) <= 0)
         return -1;
     if (pfd.revents & (POLLHUP | POLLERR))
         return -1;
